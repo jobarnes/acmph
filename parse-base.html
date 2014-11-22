@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<title>
+    <MySource_PRINT id_name="__global__" var="asset_metadata_Name" />
+    :
+    <MySource_PRINT id_name="__global__" var="site_name" />
+</title>
+
+<!--
+       Page Maintained by: %asset_metadata_UM.Maintainer.Name%, %asset_metadata_UM.Maintainer.Department%
+       Content Authorised by: %asset_metadata_UM.Authoriser.Title%, %asset_metadata_UM.Organisational.Unit%
+       Asset ID: %globals_asset_assetid%
+      -->
+
+<MySource_AREA id_name="metadata" design_area="metadata"/>
+
+<!-- global template -->
+<!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
+<link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.4/uom.css">
+<script src="//uom-design-system.s3.amazonaws.com/v0.4/uom.js"></script>
+<!-- /global template -->
+
+<MySource_AREA id_name="head" design_area="head" />
+    <!-- SITE-SPECIFIC RESOURCES -->
+    <MySource_AREA id_name="custom_css" design_area="linked_css" print="no">
+    <MySource_SET name="tag_type" value="link_tag" />
+    <MySource_SET name="media" value="all" />
+</MySource_AREA>
+<!-- HEAD EXTRAS : additional scripts and css -->
+<MySource_AREA id_name="head_extras" design_area="nest_content" cache="1">
+    <MySource_SET name="type_codes" value="page" />
+</MySource_AREA>
+<!-- /HEAD EXTRAS -->
+<!-- /SITE-SPECIFIC RESOURCES -->
+
+<MySource_AREA id_name="template_vars" design_area="declared_vars" print="no">
+    <MySource_DECLARE name="body_class" value="maps" type="text" description="Classes added to the body tag"/>
+    <MySource_DECLARE name="content_width" value="" type="text" description="Classes added to the main content area"/>
+</MySource_AREA>
+<!-- google analytics begins -->
+<!-- google analytics ends -->
+</head>
+
+<body class="<MySource_PRINT id_name='template_vars' var='body_class' />">
+<!--stopindex-->
+<div class="uomcontent">
+    <div class="page-inner">
+        <div class="page-local-history"> <a class="root" href="<MySource_PRINT id_name='__global__' var='site_link' full_url='true'/>">
+            <MySource_PRINT id_name="__global__" var="site_name" />
+            </a>
+            <MySource_AREA id_name="page_lineage" design_area="asset_lineage" cache="1">
+            <MySource_SET name="levels_to_print" value="0" />
+            <MySource_SET name="prefix_with_home_link" value="false" />
+            <MySource_SET name="suffix_with_current_link" value="true" />
+            <MySource_SET name="prefix_with_divider" value="false" />
+            <MySource_SET name="suffix_with_divider" value="false" />
+            <MySource_SET name="show_hidden_links" value="false" />
+            <MySource_DIVIDER></MySource_DIVIDER>
+            <MySource_ASSET> <span>/</span><a href="<MySource_PRINT var='asset_link' />">
+            <MySource_PRINT var='asset_short_name' />
+            </a> </MySource_ASSET>
+            </MySource_AREA>
+        </div>
+    <!-- /page-local-history --> 
+    <!--startindex-->
+    <div class='main <MySource_PRINT id_name="template_vars" var="content_width" />' id='main-content' role='main'>
+        <MySource_AREA id_name="content1" design_area="nest_content" cache="1">
+            <MySource_SET name="type_codes" value="page" />
+        </MySource_AREA>
+        <MySource_AREA id_name="body" design_area="body" />
+            <MySource_AREA id_name="content2" design_area="nest_content" cache="1">
+            <MySource_SET name="type_codes" value="page" />
+        </MySource_AREA>
+    </div><!-- /main-content --> 
+    <!--stopindex-->
+    <MySource_AREA id_name="standard_menu" design_area="menu_normal" cache="1">
+        <MySource_SET name="level" value="top" />
+        <MySource_SET name="show_subs" value="on_current" />
+        <!-- set navigation to ignore a range of asset types -->
+        <MySource_SET name="unwanted_asset_types" value="image, news_item, calendar_event, file" />
+        <MySource_SET name="settings.class.normal" value="" />
+        <MySource_SET name="settings.class.current" value="current" />
+        <MySource_SET name="settings.class.hierarchy" value="hierarchy" />
+            <div class="no-js" id="sitemap" role="navigation">
+            <h2>%globals_asset_short_name%</h2>
+                <ul>
+                <MySource_ASSET>
+                    <li class="<MySource_PRINT var="settings.class" /> 
+                "><a href="<MySource_PRINT var='asset_link' />">
+                    <MySource_PRINT var="asset_short_name" />
+                </a>
+                <MySource_SUB design_area="menu_normal">
+                <MySource_SET name="show_subs" value="on_current" />
+                <MySource_SET name="settings.class.normal" value="" />
+                <MySource_SET name="settings.class.current" value="current" />
+                <MySource_SET name="settings.class.hierarchy" value="hierarchy" />
+                    <div class="inner">
+                    <ul>
+                    <MySource_ASSET>
+                        <li class="<MySource_PRINT var="settings.class" />
+                        "><a href="<MySource_PRINT var='asset_link' />">
+                        <MySource_PRINT var="asset_short_name" />
+                        </a>
+                        </li>
+                    </MySource_ASSET>
+                    </ul>
+                    </div>
+                </MySource_SUB>
+                </li>
+                </MySource_ASSET>
+                </ul>
+            </div><!-- /#sitemap --> 
+    </MySource_AREA>
+    </div><!-- /page-inner --> 
+</div><!-- /uomcontent --> 
+
+<!-- footer for visible content -->
+<MySource_AREA id_name="footer" design_area="nest_content" cache="1">
+    <MySource_SET name="type_codes" value="page" />
+</MySource_AREA>
+<!-- footer_extras for end of page scripts -->
+<MySource_AREA id_name="footer_extras" design_area="nest_content" cache="1">
+    <MySource_SET name="type_codes" value="page" />
+</MySource_AREA>
+
+</body>
+</html>
